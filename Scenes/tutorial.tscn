@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://jamp6ubnlfsw"]
+
+[ext_resource type="PackedScene" uid="uid://cwcmi82pdcjda" path="res://Scenes/tile_map.tscn" id="1_mlkxd"]
+[ext_resource type="PackedScene" uid="uid://o6iytrj0da0g" path="res://Scenes/HUD.tscn" id="3_7gru2"]
+[ext_resource type="PackedScene" uid="uid://d055e2sga5chs" path="res://Scenes/player.tscn" id="3_lkr08"]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_mlkxd")]
+
+[node name="Player" parent="." instance=ExtResource("3_lkr08")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_7gru2")]

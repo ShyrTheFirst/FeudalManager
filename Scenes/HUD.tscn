@@ -1,0 +1,330 @@
+[gd_scene load_steps=10 format=3 uid="uid://o6iytrj0da0g"]
+
+[ext_resource type="Script" path="res://Scenes/Scenes Scripts/Buttons_camera.gd" id="1_s7n0r"]
+[ext_resource type="Texture2D" uid="uid://cab0mn43nvdfu" path="res://Assets/arrows centered.png" id="2_kqde4"]
+[ext_resource type="Texture2D" uid="uid://b2nyrhdx6gohy" path="res://Assets/tiny castle.png" id="3_b8vk2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufgro"]
+atlas = ExtResource("2_kqde4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs3b4"]
+atlas = ExtResource("2_kqde4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62lut"]
+atlas = ExtResource("2_kqde4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66slk"]
+atlas = ExtResource("2_kqde4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plbni"]
+atlas = ExtResource("2_kqde4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_chqvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufgro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs3b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62lut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66slk")
+}],
+"loop": true,
+"name": &"focused",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plbni")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_s7n0r")
+
+[node name="UP" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.705882)
+offset_right = 1920.0
+offset_bottom = 90.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="CanvasLayer/UP"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 1918.0
+offset_bottom = 89.0
+flat = true
+
+[node name="DOWN" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.705882)
+offset_top = 993.0
+offset_right = 1920.0
+offset_bottom = 1083.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DOWN"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button2" type="Button" parent="CanvasLayer/DOWN"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 1918.0
+offset_bottom = 90.0
+flat = true
+
+[node name="LEFT" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.705882)
+offset_right = 128.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/LEFT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button2" type="Button" parent="CanvasLayer/LEFT"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 133.0
+offset_bottom = 1084.0
+flat = true
+
+[node name="RIGHT" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.705882)
+offset_left = 1792.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/RIGHT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button3" type="Button" parent="CanvasLayer/RIGHT"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 137.0
+offset_bottom = 1084.0
+flat = true
+
+[node name="LeftMouseTouch" type="Button" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -541.0
+offset_right = 50.0
+offset_bottom = 539.0
+grow_vertical = 2
+
+[node name="RightMouseTouch" type="Button" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -539.0
+offset_bottom = 541.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="UpMouseTouch" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -127.0
+offset_right = -77.0
+offset_bottom = 1666.0
+grow_horizontal = 0
+rotation = 1.57135
+
+[node name="DownMouseTouch" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -49.0002
+offset_right = -78.0001
+offset_bottom = 1617.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57135
+
+[node name="Centralized" type="Button" parent="CanvasLayer"]
+offset_left = 1796.0
+offset_top = 90.0
+offset_right = 1868.0
+offset_bottom = 162.0
+flat = true
+
+[node name="Arrow Animation" type="AnimatedSprite2D" parent="CanvasLayer/Centralized"]
+position = Vector2(36, 37)
+sprite_frames = SubResource("SpriteFrames_chqvt")
+animation = &"focused"
+autoplay = "idle"
+frame_progress = 0.951663
+
+[node name="Skill Tree" type="Button" parent="CanvasLayer"]
+offset_left = 1796.0
+offset_top = 183.0
+offset_right = 1868.0
+offset_bottom = 255.0
+flat = true
+
+[node name="SkillTree Animation" type="AnimatedSprite2D" parent="CanvasLayer/Skill Tree"]
+position = Vector2(36, 37)
+sprite_frames = SubResource("SpriteFrames_chqvt")
+animation = &"focused"
+autoplay = "idle"
+
+[node name="Resources Information" type="Button" parent="CanvasLayer"]
+offset_left = 1796.0
+offset_top = 277.0
+offset_right = 1868.0
+offset_bottom = 349.0
+flat = true
+
+[node name="Resources Animation" type="AnimatedSprite2D" parent="CanvasLayer/Resources Information"]
+position = Vector2(36, 37)
+sprite_frames = SubResource("SpriteFrames_chqvt")
+animation = &"focused"
+autoplay = "idle"
+
+[node name="Zoom In" type="Button" parent="CanvasLayer"]
+offset_left = 53.0
+offset_top = 109.0
+offset_right = 125.0
+offset_bottom = 181.0
+flat = true
+
+[node name="Zoom +" type="AnimatedSprite2D" parent="CanvasLayer/Zoom In"]
+position = Vector2(36, 37)
+sprite_frames = SubResource("SpriteFrames_chqvt")
+animation = &"focused"
+autoplay = "idle"
+frame_progress = 0.951663
+
+[node name="Zoom Out" type="Button" parent="CanvasLayer"]
+offset_left = 53.0
+offset_top = 202.0
+offset_right = 125.0
+offset_bottom = 274.0
+flat = true
+
+[node name="Zoom -" type="AnimatedSprite2D" parent="CanvasLayer/Zoom Out"]
+position = Vector2(36, 37)
+sprite_frames = SubResource("SpriteFrames_chqvt")
+animation = &"focused"
+autoplay = "idle"
+
+[node name="Workers" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(199, 72)
+texture = ExtResource("3_b8vk2")
+
+[node name="Workers Text" type="Label" parent="CanvasLayer/Workers"]
+offset_left = 14.0
+offset_top = -11.0
+offset_right = 54.0
+offset_bottom = 12.0
+text = "0000"
+
+[node name="Wood" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(380, 72)
+texture = ExtResource("3_b8vk2")
+
+[node name="Wood Text" type="Label" parent="CanvasLayer/Wood"]
+offset_left = 14.0
+offset_top = -11.0
+offset_right = 54.0
+offset_bottom = 12.0
+text = "0000"
+
+[node name="Stone" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(473, 72)
+texture = ExtResource("3_b8vk2")
+
+[node name="Stone Text" type="Label" parent="CanvasLayer/Stone"]
+offset_left = 14.0
+offset_top = -11.0
+offset_right = 54.0
+offset_bottom = 12.0
+text = "0000"
+
+[node name="Food" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(562, 72)
+texture = ExtResource("3_b8vk2")
+
+[node name="Food Text" type="Label" parent="CanvasLayer/Food"]
+offset_left = 14.0
+offset_top = -11.0
+offset_right = 54.0
+offset_bottom = 12.0
+text = "0000"
+
+[connection signal="mouse_entered" from="CanvasLayer/UP/Button" to="CanvasLayer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UP/Button" to="CanvasLayer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/DOWN/Button2" to="CanvasLayer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/DOWN/Button2" to="CanvasLayer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/LEFT/Button2" to="CanvasLayer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/LEFT/Button2" to="CanvasLayer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/RIGHT/Button3" to="CanvasLayer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RIGHT/Button3" to="CanvasLayer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/LeftMouseTouch" to="CanvasLayer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/LeftMouseTouch" to="CanvasLayer" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/LeftMouseTouch" to="CanvasLayer" method="_on_left_mouse_touch_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/RightMouseTouch" to="CanvasLayer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RightMouseTouch" to="CanvasLayer" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/RightMouseTouch" to="CanvasLayer" method="_on_right_mouse_touch_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UpMouseTouch" to="CanvasLayer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UpMouseTouch" to="CanvasLayer" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/UpMouseTouch" to="CanvasLayer" method="_on_up_mouse_touch_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/DownMouseTouch" to="CanvasLayer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/DownMouseTouch" to="CanvasLayer" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/DownMouseTouch" to="CanvasLayer" method="_on_down_mouse_touch_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Centralized" to="CanvasLayer" method="_on_centralized_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Centralized" to="CanvasLayer" method="_on_centralized_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Centralized" to="CanvasLayer" method="_on_centralized_pressed"]

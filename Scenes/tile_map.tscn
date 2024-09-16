@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwcmi82pdcjda"]
+
+[ext_resource type="Texture2D" uid="uid://sitffffp1v8p" path="res://Assets/tiles_drawning.png" id="1_ipevc"]
+[ext_resource type="Script" path="res://Scenes/Scenes Scripts/Tiles.gd" id="2_6dge3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yr7rm"]
+texture = ExtResource("1_ipevc")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ht3rt"]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetAtlasSource_yr7rm")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_ht3rt")
+rendering_quadrant_size = 128
+format = 2
+layer_0/name = "TileTerrain"
+layer_1/name = "TileFormat"
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("2_6dge3")

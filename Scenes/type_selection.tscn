@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl1ku680nrnws"]
+
+[ext_resource type="Script" path="res://Scenes/Scenes Scripts/type_selection.gd" id="1_m2r3l"]
+[ext_resource type="Texture2D" uid="uid://bmrr31upkqjgo" path="res://Assets/icons_selection.png" id="2_07r1f"]
+[ext_resource type="Texture2D" uid="uid://dtr8ac363yfh3" path="res://Assets/denied.png" id="3_k82v3"]
+
+[node name="Type_selection" type="Button" groups=["selection"]]
+custom_minimum_size = Vector2(16, 16)
+scale = Vector2(2, 2)
+tooltip_text = "Tooltip"
+script = ExtResource("1_m2r3l")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+texture = ExtResource("2_07r1f")
+hframes = 7
+
+[node name="Enabler" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("3_k82v3")

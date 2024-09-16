@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Manager" load_steps=2 format=3 uid="uid://s6m68widnkw8"]
+
+[ext_resource type="Script" path="res://Global Scripts/ResourcesManager.gd" id="1_jrrhf"]
+
+[resource]
+script = ExtResource("1_jrrhf")
+workers = 4
+woods = 0
+stone = 0
+food = 0
